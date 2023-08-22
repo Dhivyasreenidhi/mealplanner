@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Foodie Login</title>
+</head>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	background-image:url("https://img.freepik.com/free-vector/realistic-meal-planner-template_52683-81784.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}	
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 80%;
+    padding: 10px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+</style>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action = "{% url 'Homepage' %}">
+            
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button><br><br>
+			<a href = "{% url 'registerpage' %}"> create an account </a>
+        </form>
+    </div>
+    <script>
+	document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === 'foodie' && password === 'delicious') {
+        alert('Login successful! Welcome to Foodie Portal.');
+        // You can redirect to another page here if needed
+    } else {
+        alert('Invalid username or password. Please try again.');
+    }
+       
+    const csrftoken = getCookie('csrftoken');
+    }
+
+	</script>
+</body>
+</html>

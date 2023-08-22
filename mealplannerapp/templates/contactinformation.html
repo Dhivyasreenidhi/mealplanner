@@ -1,0 +1,11 @@
+<h1>Register Information</h1>
+<table border = "1">
+    {% for x in mymembers %}
+    <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.username }}</td>
+        <td>{{ x.email }}</td>
+        <td>{{ x.password }}</td>
+    </tr>
+    {% endfor %}
+</table>

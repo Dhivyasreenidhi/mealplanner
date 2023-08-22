@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Foodie Registration</title>
+	<style>
+	body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url("https://img.freepik.com/free-photo/top-view-food-frame-with-copy-space_23-2148723447.jpg?w=1060&t=st=1692264414~exp=1692265014~hmac=1b632950a27c7b508d218610a292cbd910a16fa0f7d8936c1b02ff88a3cea043");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color:red;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 80%;
+    padding: 10px;
+    background-color:red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color:rgb(146, 74, 74);
+}
+
+	</style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Registration Page</h1>
+        <form  action = "{% url 'ind' %}",method = "post">
+            {% csrf_token %}
+            <input type="text" id="username" name = "name" placeholder="Username" required name = "name">
+            <input type="email" id="email" name = "email" placeholder="Email" required>
+            <input type="password" id="password" name = "password" placeholder="Password" required>
+            <button type="submit">Register</button><br><br>
+            <a href = "{% url 'loginpage' %}" style="color:rgb(237, 171, 171)"> Already having an account </a>
+        </form>
+    </div>
+    <script>
+	document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // You can add more complex validation here
+
+    if (username && email && password) {
+        alert('Registration successful! Welcome to Foodie.');
+        // You can redirect to another page here if needed
+    } else {
+        alert('Please fill in all registration fields.');
+    }
+});
+
+	</script>
+</body>
+</html>

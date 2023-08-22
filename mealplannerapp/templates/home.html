@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Welcomes all</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'loginpage' %}"class="w3-bar-item w3-button">Login</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Menu</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+	    <a href="{% url 'plannerex' %}"class="w3-bar-item w3-button">planner</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home"></header>
+<img class="w3-image" src="https://img.freepik.com/free-photo/meal-planning-notepad-food-composition_23-2149099820.jpg?w=360" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Meal Planner</h1>
+  </div>
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVyZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Table Setting" width="400" height="400">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Meal Planner</h1><br>
+      <h5 class="w3-center">Plan your work and work your plan.</h5>
+      <p class="w3-large">Welcome to our Weekly Recipe Meal Planner! Take control of your meals and plan your week with delicious recipes. Whether you're a cooking enthusiast or just looking for a way to simplify your meal preparation, our planner has you covered. </p>
+      <p class="w3-large">Are you looking for an efficient way to organize your weekly meals with delicious recipes? Our Recipe Meal Planner is here to help! Plan your breakfast, lunch, and dinner for each day of the week, and keep track of your favorite recipes.</p>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <br><br><br><br>
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Menu</h1><br>
+      <h4>Break Fast</h4>
+      <p class="w3-text-grey">A variety of breakfast options, such as cereals, yogurt, smoothies, eggs, toast.</p><br>
+    
+      <h4>Lunch</h4>
+      <p class="w3-text-grey">Different types of lunch options, such as salads, meals,sandwiches, wraps, soups, and bowls.</p><br>
+    
+      <h4>Dinner</h4>
+      <p class="w3-text-grey">Showcase a range of dinner choices, including pasta dishes, stir-fries, roasts.</p><br>
+    
+      <h4>Desserts</h4>
+      <p class="w3-text-grey">Feature a variety of desserts, such as cakes, pies, ice creams, and pastries.</p><br>
+    
+        
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="https://us.123rf.com/450wm/benidict83/benidict831311/benidict83131100032/24028939-concept-de-l-oeuf-de-conception-de-menu-de-chef-fond.jpg?ver=6" class="w3-round w3-image w3-opacity-min" alt="Menu" width="800" height="500">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <form action="{% url 'thankyoupage' %}">
+      
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name"  name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Phone Number"  name="PhoneNumber"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email-Id"  name="Email" ></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements"  name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Hope you liked <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">our planner</a></p>
+</footer>
+
+</body>
+</html>
